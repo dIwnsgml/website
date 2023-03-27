@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>Mind Matrix</title>
+    <link rel="stylesheet" href="login.css">
+  </head>
+  <body>
+<h2>Sign In / Sign Up!</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+			</div>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button id="signUpConfirm">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div class="social-container">
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button id="signInConfirm">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>Please Enter Your Personal Info!</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Fellow Student!</h1>
+				<p>Start Your Educational Journey With Us!</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		Created with <i class="fa fa-heart"></i> by
+		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+		- Read how I created this and how you can join the challenge
+		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+	</p>
+</footer>
+    </body>
+  <script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+    const signInConfirm = document.getElementById("signInConfirm");
+    const signUpConfirm = document.getElementById("signUpConfirm");
+    
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+  signUpConfirm.addEventListener('click', () => {
+	const userName = document.getElementById("")
+    fetch('http://localhost:1000/api/login',{
+      
+    })
+      .then(response => response.json())
+      .then(loginData => {
+        document.cookies = `login=loginData`
+      })
+});
+
+    signInConfirm.addEventListener("click", () => {
+      
+    });
+  </script>
+</html>
